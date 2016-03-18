@@ -14,7 +14,7 @@ from api.config import expiration
 
 class LoginForm(Form):
     password = CharField(label=u'密码：', widget=PasswordInput())
-    qq = CharField(label='QQ：', max_length=15)
+    qq = CharField(label='QQ：', max_length=20)
 
 
 class Login(View):
@@ -29,8 +29,7 @@ class Login(View):
             if user:
                 if user.status == 1:
                     data = {"status": 'success',
-                            'msg': "Login success"
-                            }
+                            'msg': "Login success"}  ＃ 没看懂，这些单双引号为什么交叉着写。
 
                     user_token = new_token(user, 'login')
                     token = user_token.get_token()
