@@ -76,7 +76,7 @@ class Resume(models.Model):
     username = models.CharField(max_length=50)
     sex = models.IntegerField(default=0, choices=sexChoices)
     age = IntegerRangeField(default=20, min_value=15, max_value=100)
-    yearsOfWorking = IntegerRangeField(default=0, min_value=0, max_value=60)
+    yearsOfWorking = IntegerRangeField(default=0, min_value=0, max_value=age-5)
     school = models.CharField(max_length=40)
     education = models.IntegerField(default=2, choices=eduChoices)
 
